@@ -28,27 +28,37 @@ class PicusDBManage(object):
     #insert the new data to raw_data
     def insert_raw_data(self, raw_data_list):
 		measurement = "raw_data"
-		host_name = "13.56.155.255"
+		host_name = "127.0.0.1"
 		region_value = "us_west"
-		brand_value = raw_data_list[0]
+		# brand_value = raw_data_list[0]
+		m_value = raw_data_list[0]
 		air_out_temp_value = raw_data_list[1]
-		air_out_temp_changing_rate_value = raw_data_list[2]
-		base_powder_temp_value = raw_data_list[3]
-		base_powder_temp_changing_rate_value = raw_data_list[4]
-		air_in_temp_1_value = raw_data_list[5]
-		air_in_temp_1_changing_rate_value = raw_data_list[6]
-		slurry_temp_value = raw_data_list[7]
-		slurry_temp_changing_rate_value = raw_data_list[8]
-		tower_top_negative_pressure_value = raw_data_list[9]
-		tower_top_negative_pressure_changing_rate_value = raw_data_list[10]
-		aging_tank_flow_value = raw_data_list[11]
-		second_input_air_temp_value = raw_data_list[12]
-		slurry_pipeline_lower_layer_pressure_value = raw_data_list[13]
-		out_air_motor_freq_value = raw_data_list[14]
-		second_air_motor_freq_value = raw_data_list[15]
-		high_pressure_pump_freq_value = raw_data_list[16]
-		gas_flow_value = raw_data_list[17]
-		ambient_humidity_value = raw_data_list[18]
+		base_powder_temp_value = raw_data_list[2]
+		air_in_temp_1_value = raw_data_list[3]
+		slurry_temp_value = raw_data_list[4]
+		tower_top_negative_pressure_value = raw_data_list[5]
+		aging_tank_flow_value = raw_data_list[6]
+		second_input_air_temp_value = raw_data_list[7]
+		slurry_pipeline_lower_layer_pressure_value = raw_data_list[8]
+		out_air_motor_freq_value = raw_data_list[9]
+		second_air_motor_freq_value = raw_data_list[10]
+		high_pressure_pump_freq_value = raw_data_list[11]
+		gas_flow_value = raw_data_list[12]
+
+		p_m_value = raw_data_list[13]
+		p_air_out_temp_value = raw_data_list[14]
+		p_base_powder_temp_value = raw_data_list[15]
+		p_air_in_temp_1_value = raw_data_list[16]
+		p_slurry_temp_value = raw_data_list[17]
+		p_tower_top_negative_pressure_value = raw_data_list[18]
+		p_aging_tank_flow_value = raw_data_list[19]
+		p_second_input_air_temp_value = raw_data_list[20]
+		p_slurry_pipeline_lower_layer_pressure_value = raw_data_list[21]
+		p_out_air_motor_freq_value = raw_data_list[22]
+		p_second_air_motor_freq_value = raw_data_list[23]
+		p_high_pressure_pump_freq_value = raw_data_list[24]
+		p_gas_flow_value = raw_data_list[25]
+
 		json_body = [
 			    {
 			        "measurement": measurement,
@@ -57,16 +67,12 @@ class PicusDBManage(object):
 			            "region": region_value
 			        },
 			        "fields": {
+			        	"m" : m_value,
 			            "air_out_temp": air_out_temp_value,
-			            "air_out_temp_changing_rate": air_out_temp_changing_rate_value,
 			            "base_powder_temp": base_powder_temp_value,
-			            "base_powder_temp_changing_rate": base_powder_temp_changing_rate_value,
 			            "air_in_temp_1": air_in_temp_1_value,
-			            "air_in_temp_1_changing_rate": air_in_temp_1_changing_rate_value,
 			            "slurry_temp": slurry_temp_value,
-			            "slurry_temp_changing_rate": slurry_temp_changing_rate_value,
 			            "tower_top_negative_pressure": tower_top_negative_pressure_value,
-			            "tower_top_negative_pressure_changing_rate": tower_top_negative_pressure_changing_rate_value,
 			            "aging_tank_flow": aging_tank_flow_value,
 			            "second_input_air_temp": second_input_air_temp_value,
 			            "slurry_pipeline_lower_layer_pressure":slurry_pipeline_lower_layer_pressure_value,
@@ -74,7 +80,19 @@ class PicusDBManage(object):
 			            "second_air_motor_freq": second_air_motor_freq_value,
 			            "high_pressure_pump_freq": high_pressure_pump_freq_value,
 			            "gas_flow": gas_flow_value,
-			            "ambient_humidity": ambient_humidity_value
+			            "p_m": p_m_value,
+			            "p_air_out_temp": p_air_out_temp_value,
+			            "p_base_powder_temp": p_base_powder_temp_value,
+			            "p_air_in_temp_1": p_air_in_temp_1_value,
+			            "p_slurry_temp": p_slurry_temp_value,
+			            "p_tower_top_negative_pressure": p_tower_top_negative_pressure_value,
+			            "p_aging_tank_flow": p_aging_tank_flow_value,
+			            "p_second_input_air_temp": p_second_input_air_temp_value,
+			            "p_slurry_pipeline_lower_layer_pressure":p_slurry_pipeline_lower_layer_pressure_value,
+			            "p_out_air_motor_freq": p_out_air_motor_freq_value,
+			            "p_second_air_motor_freq": p_second_air_motor_freq_value,
+			            "p_high_pressure_pump_freq": p_high_pressure_pump_freq_value,
+			            "p_gas_flow": p_gas_flow_value,
 			        }
 			    }
 			]
@@ -94,7 +112,7 @@ class PicusDBManage(object):
     def insert_energy_consumption_data(self, table_name, field_a_name, field_a_value, field_b_name, field_b_value):
 		measurement = table_name
 		print measurement
-		host_name = "13.56.155.255"
+		host_name = "127.0.0.1"
 		region_value = "us_west"
 		json_body = [
 			    {
