@@ -18,7 +18,7 @@ from picus_db_manage import PicusDBManage
 
 if __name__=='__main__':
 	db_manage = PicusDBManage()
-	workbook = xlrd.open_workbook('jingbai_for_demo_v2.xls', on_demand = True)
+	workbook = xlrd.open_workbook('jingbai_for_demo_v3.xls', on_demand = True)
 	sheet = workbook.sheet_by_index(0)
 	max_row_num = sheet.nrows
 	max_col_num = sheet.ncols
